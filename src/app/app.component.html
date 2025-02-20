@@ -1,2 +1,33 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<!-- <app-nx-welcome></app-nx-welcome>
+<router-outlet></router-outlet> -->
+
+<input type="text" placeholder="Search: coming soon!">
+
+<h1>Pokedex</h1>
+<!-- <ul>
+ 
+    @for (pokemon of pokemonList; track pokemon.id) {
+        <li>
+          <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" />
+          {{ pokemon.name | titlecase }}
+        </li>
+      }
+</ul> -->
+
+<div class="pokemon-container">
+    @for (pokemon of pokemonList; track pokemon.id) {
+      <mat-card class="pokemon-card">
+        <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" />
+        <h2>{{ pokemon.name | titlecase }}</h2>
+      </mat-card>
+    }
+  </div>
+  
+  <mat-paginator
+    [length]="totalPokemon"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    (page)="onPageChange($event)"
+    [pageSizeOptions]="[10, 20, 50]"
+    aria-label="Select Pokémon page">
+  </mat-paginator>

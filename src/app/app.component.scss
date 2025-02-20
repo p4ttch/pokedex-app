@@ -1,0 +1,18 @@
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .pokemon-card {
+    width: 200px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  mat-paginator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
